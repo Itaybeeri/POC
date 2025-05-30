@@ -1,2 +1,84 @@
-# POC
-A repo for multiple POC's in diffrent tech and languages
+# Technology POC Repository
+
+This repository contains various Proof of Concept (POC) implementations in different programming languages and frameworks. Each POC demonstrates how to implement the same functionality using different technology stacks, allowing for comparison of approaches, performance, and developer experience.
+
+## Current POCs
+
+### 1. API Gateway Implementation
+
+Located in `api-gateways/`
+
+A microservices API Gateway implementation comparing different approaches:
+
+#### Golang Implementation
+
+- Built with Go and Echo framework
+- Features:
+  - Lightweight and high-performance
+  - Built-in concurrency support
+  - Strong typing and compile-time checks
+  - Minimal memory footprint
+  - Native JSON handling
+
+#### Node.js Implementation
+
+- Built with Express.js
+- Features:
+  - Event-driven architecture
+  - Rich ecosystem of middleware
+  - Easy JSON handling
+  - Asynchronous I/O
+  - Extensive npm package support
+
+For detailed information about the API Gateway POC, including setup instructions and API documentation, please refer to the README.md in the `api-gateways/` directory.
+
+## Project Structure
+
+```
+.
+├── api-gateways/           # API Gateway POC implementations
+│   ├── golang-gateway/    # Go implementation
+│   └── nodejs-gateway/    # Node.js implementation
+└── README.md              # This file
+```
+
+## Purpose
+
+This repository serves as a collection of technology comparisons, helping developers:
+
+- Compare different approaches to solving the same problem
+- Understand the strengths and weaknesses of various technology stacks
+- Make informed decisions about technology choices
+- Learn from real-world implementation examples
+
+## Contributing
+
+We welcome contributions of new POCs or improvements to existing ones. Please follow these steps:
+
+1. Fork the repository
+2. Create a new branch for your POC
+3. Add your implementation in a new directory
+4. Include a comprehensive README.md with:
+   - Overview of the POC
+   - Implementation details
+   - Setup instructions
+   - Technology comparisons
+   - Performance metrics (if applicable)
+5. Update this main README.md with a brief description of your POC
+6. Submit a pull request
+
+## Guidelines for New POCs
+
+When adding a new POC, please ensure:
+
+1. **Clear Purpose**: Define what problem the POC solves
+2. **Multiple Implementations**: Include at least two different technology approaches
+3. **Documentation**: Provide comprehensive setup and usage instructions
+4. **Comparisons**: Include pros and cons of each implementation
+5. **Code Quality**: Follow best practices for each technology
+6. **Testing**: Include basic tests and performance benchmarks
+7. **Dependencies**: Clearly list all requirements and dependencies
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
