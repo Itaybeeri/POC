@@ -30,7 +30,17 @@ A microservices API Gateway implementation comparing different approaches:
   - Asynchronous I/O
   - Extensive npm package support
 
-For detailed information about the API Gateway POC, including setup instructions and API documentation, please refer to the README.md in the `api-gateways/` directory.
+#### .NET 8 Implementation
+
+- Built with .NET 8 and YARP (Yet Another Reverse Proxy)
+- Features:
+  - High performance and scalability
+  - Modern minimal API style
+  - YARP for reverse proxying
+  - Strong typing and tooling
+  - Swagger/OpenAPI documentation
+
+For detailed information about each API Gateway POC, including setup instructions and API documentation, please refer to the README.md in the respective `api-gateways/` subdirectory.
 
 ## Project Structure
 
@@ -38,7 +48,8 @@ For detailed information about the API Gateway POC, including setup instructions
 .
 ├── api-gateways/           # API Gateway POC implementations
 │   ├── golang-gateway/    # Go implementation
-│   └── nodejs-gateway/    # Node.js implementation
+│   ├── nodejs-gateway/    # Node.js implementation
+│   └── dotnet-gateway/    # .NET 8 implementation
 └── README.md              # This file
 ```
 
