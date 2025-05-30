@@ -1,8 +1,0 @@
-F:\Development\POC\api-gateways\dotnet-gateway\src\WalletService\obj\Debug\net9.0\WalletService.csproj.AssemblyReference.cache
-F:\Development\POC\api-gateways\dotnet-gateway\src\WalletService\obj\Debug\net9.0\WalletService.GeneratedMSBuildEditorConfig.editorconfig
-F:\Development\POC\api-gateways\dotnet-gateway\src\WalletService\obj\Debug\net9.0\WalletService.AssemblyInfoInputs.cache
-F:\Development\POC\api-gateways\dotnet-gateway\src\WalletService\obj\Debug\net9.0\WalletService.AssemblyInfo.cs
-F:\Development\POC\api-gateways\dotnet-gateway\src\WalletService\obj\Debug\net9.0\WalletService.csproj.CoreCompileInputs.cache
-F:\Development\POC\api-gateways\dotnet-gateway\src\WalletService\obj\Debug\net9.0\WalletService.MvcApplicationPartsAssemblyInfo.cs
-F:\Development\POC\api-gateways\dotnet-gateway\src\WalletService\obj\Debug\net9.0\WalletService.MvcApplicationPartsAssemblyInfo.cache
-F:\Development\POC\api-gateways\dotnet-gateway\src\WalletService\obj\Debug\net9.0\WalletService.sourcelink.json
