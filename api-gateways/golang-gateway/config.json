@@ -1,0 +1,13 @@
+{
+    "port": "8080",
+    "routes": [
+      {
+        "path": "/api/wallet/*",
+        "target": "http://localhost:5201"
+      },
+      {
+        "path": "/api/user/*",
+        "target": "http://localhost:5202"
+      }
+    ]
+  }
