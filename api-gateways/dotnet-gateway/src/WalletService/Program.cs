@@ -9,8 +9,9 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-// Configure the port
-builder.WebHost.UseUrls("http://localhost:5201");
+// Configure the port from settings
+var port = builder.Configuration.GetValue<int>("ServiceSettings:Port");
+builder.WebHost.UseUrls($"http://localhost:{port}");
 
 var app = builder.Build();
 
