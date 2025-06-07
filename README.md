@@ -40,7 +40,36 @@ A microservices API Gateway implementation comparing different approaches:
   - Strong typing and tooling
   - Swagger/OpenAPI documentation
 
-For detailed information about each API Gateway POC, including setup instructions and API documentation, please refer to the README.md in the respective `api-gateways/` subdirectory.
+### 2. Logging Extension Method
+
+Located in `.net/log extenstion method/`
+
+A dual-logging system implementation that separates application logs from infrastructure logs:
+
+- Features:
+  - Two separate logging systems (AppsLogger and InfraLogger)
+  - Elasticsearch integration for log storage
+  - Configurable through appsettings.json
+  - Enable/disable logging systems independently
+  - REST API endpoints for logging
+  - Support for multiple log levels
+  - Additional data support in logs
+
+### 3. MCP Server Demo
+
+Located in `.net/McpDemoServer/`
+
+A Model Context Protocol (MCP) server implementation that demonstrates how to expose backend services and data for AI models:
+
+- Features:
+  - Standardized interface for AI model integration
+  - Customer service API with in-memory data store
+  - Swagger/OpenAPI documentation
+  - Modern .NET 8 Web API implementation
+  - RESTful endpoints for customer data access
+  - Extensible architecture for adding more services
+
+For detailed information about each POC, including setup instructions and API documentation, please refer to the README.md in the respective subdirectories.
 
 ## Project Structure
 
@@ -50,6 +79,9 @@ For detailed information about each API Gateway POC, including setup instruction
 │   ├── golang-gateway/    # Go implementation
 │   ├── nodejs-gateway/    # Node.js implementation
 │   └── dotnet-gateway/    # .NET 8 implementation
+├── .net/                  # .NET related POCs
+│   ├── log extenstion method/  # Dual-logging system implementation
+│   └── McpDemoServer/     # Model Context Protocol server
 └── README.md              # This file
 ```
 

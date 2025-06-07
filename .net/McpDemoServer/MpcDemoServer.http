@@ -1,0 +1,6 @@
+@MpcDemoServer_HostAddress = http://localhost:5047
+
+GET {{MpcDemoServer_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
