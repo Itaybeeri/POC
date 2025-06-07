@@ -33,8 +33,9 @@ if (app.Environment.IsDevelopment())
 // app.UseHttpsRedirection(); // Commented out for testing
 
 // MCP Metadata endpoint
-app.MapGet("/mcp/metadata", () =>
+app.MapGet("/mcp/metadata", (ILogger<Program> logger) =>
 {
+    logger.LogInformation("Received request for MCP metadata");
     var metadata = new
     {
         version = "1.0",
@@ -85,23 +86,49 @@ app.MapGet("/mcp/metadata", () =>
         }
     };
 
+    logger.LogInformation("Returning metadata: {Metadata}", JsonSerializer.Serialize(metadata));
     return Results.Json(metadata, new JsonSerializerOptions { WriteIndented = true });
 })
 .WithName("GetMcpMetadata")
 .WithOpenApi();
 
-app.MapGet("/mcp/customer/{id}", async (string id, ICustomerService service) =>
+app.MapGet("/mcp/customer/{id}", async (string id, ICustomerService service, ILogger<Program> logger) =>
 {
-    var customer = await service.GetCustomerByIdAsync(id);
-    return customer is null ? Results.NotFound() : Results.Ok(customer);
+    logger.LogInformation("Received request for customer ID: {Id}", id);
+    try
+    {
+        var customer = await service.GetCustomerByIdAsync(id);
+        if (customer is null)
+        {
+            logger.LogWarning("Customer not found for ID: {Id}", id);
+            return Results.NotFound();
+        }
+        logger.LogInformation("Customer found: {Customer}", JsonSerializer.Serialize(customer));
+        return Results.Ok(customer);
+    }
+    catch (Exception ex)
+    {
+        logger.LogError(ex, "Error processing request for customer ID: {Id}", id);
+        return Results.Problem(ex.Message);
+    }
 })
 .WithName("GetCustomer")
 .WithOpenApi();
 
-app.MapGet("/mcp/customers", async (ICustomerService service) =>
+app.MapGet("/mcp/customers", async (ICustomerService service, ILogger<Program> logger) =>
 {
-    var customers = await service.ListCustomersAsync();
-    return Results.Ok(customers);
+    logger.LogInformation("Received request for all customers");
+    try
+    {
+        var customers = await service.ListCustomersAsync();
+        logger.LogInformation("Returning {Count} customers", customers.Count());
+        return Results.Ok(customers);
+    }
+    catch (Exception ex)
+    {
+        logger.LogError(ex, "Error processing request for all customers");
+        return Results.Problem(ex.Message);
+    }
 })
 .WithName("GetAllCustomers")
 .WithOpenApi();
